@@ -1,0 +1,77 @@
+.flex {
+  display: flex;
+}
+
+.flex-occupy {
+  flex: 1;
+}
+
+.bg-white {
+  background: white;
+}
+.bg-light {
+  background: #f1edea;
+}
+.text-normal {
+  font-size: 14px;
+}
+.text-small {
+  font-size: 11px;
+}
+
+.text-medium {
+  font-size: 13px;
+}
+
+.text-big{
+  font-size: 18px;
+}
+
+.text-faded {
+  opacity: 0.8;
+}
+
+.text-strong {
+  font-weight: 600;
+}
+
+.vertical-align {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-center {
+  justify-content: center;
+}
+
+.align-middle {
+  align-items: center;
+}
+
+.m-t {
+  margin-top: 8px !important;
+}
+
+.m-b {
+  margin-bottom: 8px !important;
+}
+
+.m-r {
+  margin-right: 8px !important;
+}
+
+.m-l {
+  margin-left: 8px !important;
+}
+
+.m-l-sm {
+  margin-left: 4px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.no-margin {
+  margin: 0;
+}

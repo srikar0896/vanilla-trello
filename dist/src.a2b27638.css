@@ -1,0 +1,178 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.boards-container {
+  height: calc(100vh - 32px);
+  width: calc(100vw - 32px);
+  background: #bed9f996;
+  padding: 12px;
+  margin: 4px;
+  display: flex;
+  overflow-x: scroll;
+  z-index: 0;
+}
+
+.boards-container .board {
+  background: #f1edea;
+  padding: 12px 8px;
+  border-radius: 8px;
+  min-width: 300px;
+  max-width: 300px;
+  margin: 4px;
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+}
+
+.board .board-item {
+  background: #fff;
+  padding: 12px;
+  margin: 12px 4px;
+  border-radius: 12px;
+  cursor: grab;
+}
+
+.board-items-container {
+  height: 100%;
+  overflow-y: scroll;
+}
+.board-item > .content-wrapper > p {
+  margin: 0;
+}
+
+.board-item > .content-wrapper > p {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+
+.drag-sort-active {
+  background: transparent;
+  color: transparent;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12);
+  transition: all 0.19s cubic-bezier(0.42, 0, 0.35, 1);
+  transition-property: transform;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+  /* border: 1px solid #4ca1af; */
+}
+
+button {
+  height: 32px;
+  background: #443ac7;
+  color: #ffffffcf;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #574ed2;
+}
+
+input, textarea {
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  padding: 0 8px;
+}
+
+input {
+  height: 32px;
+}
+
+input::focus {
+  border: 1px solid #443ac7;
+  background: white !important;
+}
+
+::placeholder {
+  color: #7b7979cf;
+  padding-left: 4px;
+  font-size: 12px;
+  opacity: 1;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-occupy {
+  flex: 1;
+}
+
+.bg-white {
+  background: white;
+}
+.bg-light {
+  background: #f1edea;
+}
+.text-normal {
+  font-size: 14px;
+}
+.text-small {
+  font-size: 11px;
+}
+
+.text-medium {
+  font-size: 13px;
+}
+
+.text-big{
+  font-size: 18px;
+}
+
+.text-faded {
+  opacity: 0.8;
+}
+
+.text-strong {
+  font-weight: 600;
+}
+
+.vertical-align {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-center {
+  justify-content: center;
+}
+
+.align-middle {
+  align-items: center;
+}
+
+.m-t {
+  margin-top: 8px !important;
+}
+
+.m-b {
+  margin-bottom: 8px !important;
+}
+
+.m-r {
+  margin-right: 8px !important;
+}
+
+.m-l {
+  margin-left: 8px !important;
+}
+
+.m-l-sm {
+  margin-left: 4px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+
+/*# sourceMappingURL=/src.a2b27638.css.map */
