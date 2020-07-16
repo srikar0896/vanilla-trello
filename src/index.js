@@ -4,12 +4,16 @@ import Model from "./model";
 import { qs } from "./utils";
 import data from "./data";
 
-import "./styles.css";
-import "./baseStyles.css";
+import "../styles.css";
+import "../baseStyles.css";
 
 const container = qs(".boards-container");
 
+const options = {
+	allowDragNDrop: true,
+};
+
 const model = new Model(data);
 const view = new View(container);
-const controller = new Controller(model, view);
+const controller = new Controller(model, view, options);
 controller.init();

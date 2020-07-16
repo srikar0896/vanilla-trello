@@ -1,11 +1,12 @@
 import Board from "./board";
-import { enableDragSort } from "./sort";
+import { enableDragSort } from "./drag";
 import eventBus from "./eventBus";
 
 export default class Controller {
-  constructor(model, view) {
+  constructor(model, view, options) {
     this.model = model;
     this.view = view;
+    this.options = options;
 
     this.addedBoardItem = this.addedBoardItem.bind(this);
     this.deleteBoardItem = this.deleteBoardItem.bind(this);
@@ -27,25 +28,28 @@ export default class Controller {
 
   init() {
     this.emptyContainer();
-    console.log("boards==", this.model.boards);
     this.model.boards.forEach(boardData => {
       const board = new Board(boardData, this.view.container);
       board.init();
     });
-    enableDragSort("drag-sort-enable");
+
+    if(!this.options){
+      enableDragSort("drag-sort-enable");
+    } else if(this.options.allowDragNDrop) {
+      enableDragSort("drag-sort-enable");
+    }
+
     this.registerEvents();
   }
 
   addedBoardItem({ detail: { boardId, data } }) {
     this.model.addBoardItem(boardId, data).then(_ => {
-      eventBus.fire("board-updatedx", boardId);
       this.init();
     });
   }
 
   deleteBoardItem({ detail: { boardItemId } }) {
     this.model.deleteBoardItem(boardItemId).then(_ => {
-      eventBus.fire("board-updatedx", boardItemId);
       this.init();
     });
   }

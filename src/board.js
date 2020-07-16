@@ -9,11 +9,6 @@ class View {
   }
 
   renderBoard(boardData) {
-    // const boardContainer = qs(
-    //   `[data-board-id="${boardData.id}"]`,
-    //   this.container
-    // );
-
     const boardTemplate = document.createElement("div");
     boardTemplate.className = "board";
     boardTemplate.setAttribute("data-board-id", boardData.id);
@@ -50,7 +45,7 @@ export default class Board {
     this.view = new View(container);
     this.init = this.init.bind(this);
     this.handleAddBoardItem = this.handleAddBoardItem.bind(this);
-    this.checkUpdateValidity = this.checkUpdateValidity.bind(this);
+    this.shouldComponentUpdate = this.shouldComponentUpdate.bind(this);
     this.registerEvents = this.registerEvents.bind(this);
     this.render = this.render.bind(this);
   }
@@ -85,10 +80,10 @@ export default class Board {
   }
 
   registerEvents() {
-    eventBus.register("board-updated", this.checkUpdateValidity);
+    eventBus.register("board-updated", this.shouldComponentUpdate);
   }
 
-  checkUpdateValidity({ detail }) {
+  shouldComponentUpdate({ detail }) {
     if (detail === this.data.id) {
       this.render();
     }
@@ -117,5 +112,7 @@ export default class Board {
       boardId: this.data.id,
       data: values
     });
+
+    return false;
   }
 }

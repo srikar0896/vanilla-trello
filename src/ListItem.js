@@ -11,7 +11,6 @@ class View {
     if(isEditing) {
       const boardItemNode = qs(
         `[data-board-item-id="${boardItem.id}"]`,
-        this.container
       );
       boardItemNode.innerHTML = `
         <form class="vertical-align flex-occupy">
@@ -119,5 +118,7 @@ export default class ListItem {
 
     this.isEditing = false;
     this.render();
+
+    return false;
   }
 }
