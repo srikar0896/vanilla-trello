@@ -27,26 +27,20 @@ function handleDrag(event) {
     y = event.clientY;
 
   selectedItem.classList.add("drag-sort-active");
-  console.log('-->', document.elementFromPoint(x,y));
   const nodeAtCoordinates = document.elementFromPoint(x, y);
   let swapItem =
     nodeAtCoordinates === null
       ? selectedItem
       : nodeAtCoordinates;
 
-  // swapItem =
-  //   swapItem !== selectedItem.nextSibling ? swapItem : swapItem.nextSibling;
-
-  console.log('SWAP', swapItem);
   if (swapItem.className.split(' ').includes("board-item")) {
     swapItem.parentNode
-      // .appendChild(selectedItem);
       .insertBefore(selectedItem, swapItem);
   }
 
+  // If this list is empty
   if (swapItem.className.split(' ').includes("board-items-container")) {
-      swapItem
-        .appendChild(selectedItem);
+      swapItem.appendChild(selectedItem);
     }
 }
 

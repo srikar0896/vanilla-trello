@@ -7,7 +7,6 @@ class View {
   }
 
   renderListItem(boardItem, isEditing) {
-    console.log(isEditing);
     if(isEditing) {
       const boardItemNode = qs(
         `[data-board-item-id="${boardItem.id}"]`,
@@ -104,7 +103,6 @@ export default class ListItem {
   }
 
   handleUpdateBoardItem(e) {
-    console.log("submit", e);
     e.preventDefault();
     const form = e.currentTarget.parentNode;
     const values = Object.values(form).reduce((obj, field) => {
