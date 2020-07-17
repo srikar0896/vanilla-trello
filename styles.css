@@ -73,15 +73,21 @@ button:hover {
   background: #574ed2;
 }
 
-input, textarea {
+input,
+textarea {
   font-size: 14px;
   border: none;
   border-radius: 4px;
-  padding: 0 8px;
+  font-family: "Open Sans", sans-serif;
 }
 
 input {
   height: 32px;
+  padding: 0 8px;
+}
+
+textarea {
+  padding: 8px;
 }
 
 input::focus {
