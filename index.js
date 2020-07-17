@@ -1,11 +1,11 @@
-import View from "./view";
-import Controller from "./controller";
-import Model from "./model";
-import { qs } from "./utils";
-import data from "./data";
+import View from "./src/view";
+import Controller from "./src/controller";
+import Model from "./src/model";
+import { qs } from "./src/utils";
+import data from "./src/data";
 
-import "../styles.css";
-import "../baseStyles.css";
+import "./styles.css";
+import "./baseStyles.css";
 
 const container = qs(".boards-container");
 
