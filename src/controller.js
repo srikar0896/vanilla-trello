@@ -15,8 +15,8 @@ export default class Controller {
     this.events = {
       add_board_item: this.addedBoardItem,
       delete_board_item: this.deleteBoardItem,
-      board_item_drag: this.saveUpdatedBoardSequence,
-      update_board_item: this.handleUpdateBoardItem,
+      board_item_drop: this.saveUpdatedBoardSequence,
+      update_board_item: this.handleUpdateBoardItem
     };
   }
 
@@ -33,9 +33,9 @@ export default class Controller {
       board.init();
     });
 
-    if(!this.options){
+    if (!this.options) {
       enableDragSort("drag-sort-enable");
-    } else if(this.options.allowDragNDrop) {
+    } else if (this.options.allowDragNDrop) {
       enableDragSort("drag-sort-enable");
     }
 
@@ -60,8 +60,8 @@ export default class Controller {
     });
   }
 
-  saveUpdatedBoardSequence() {
-    console.log("saved");
+  saveUpdatedBoardSequence({ detail: { boardItemId, boardId } }) {
+    console.log("board item dropped", boardItemId, boardItemId);
   }
 
   emptyContainer() {

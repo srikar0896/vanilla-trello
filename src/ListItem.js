@@ -7,20 +7,25 @@ class View {
   }
 
   renderListItem(boardItem, isEditing) {
-    if(isEditing) {
-      const boardItemNode = qs(
-        `[data-board-item-id="${boardItem.id}"]`,
-      );
+    if (isEditing) {
+      const boardItemNode = qs(`[data-board-item-id="${boardItem.id}"]`);
+      boardItemNode.setAttribute("draggable", false);
       boardItemNode.innerHTML = `
         <form class="vertical-align flex-occupy">
-          <input id="title" type="text" placeholder="Title" name="title" class="m-b m-t bg-light" value="${boardItem.title}"/>
-          <textarea rows="4" id="description" placeholder="Description" name="description" class="m-b bg-light">${boardItem.description}</textarea>
+          <input id="title" type="text" placeholder="Title" name="title" class="m-b m-t bg-light" value="${
+            boardItem.title
+          }"/>
+          <textarea rows="4" id="description" placeholder="Description" name="description" class="m-b bg-light">${
+            boardItem.description
+          }</textarea>
           <button class="update-item-btn">Update</button>
         </form>
       `;
     } else {
       const listItemTemplate = document.createElement("div");
-      listItemTemplate.className = ["board-item", "drag-item", "flex"].join(" ");
+      listItemTemplate.className = ["board-item", "drag-item", "flex"].join(
+        " "
+      );
       listItemTemplate.setAttribute("data-board-item-id", boardItem.id);
       listItemTemplate.innerHTML = `
         <div class="content-wrapper vertical-align flex-occupy">

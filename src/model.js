@@ -3,7 +3,9 @@ export default class Model {
     this.boards = data.boards;
     this.addBoardItem = this.addBoardItem.bind(this);
     this.updateBoardItem = this.updateBoardItem.bind(this);
+    this.updateBoardItemSequence = this.updateBoardItemSequence.bind(this);
   }
+
   addBoardItem(boardId, { title, description }) {
     return new Promise(resolve => {
       const data = {
@@ -42,7 +44,6 @@ export default class Model {
     });
   }
 
-
   updateBoardItem(boardItemId, { title, description }) {
     const data = {
       id: boardItemId,
@@ -55,7 +56,9 @@ export default class Model {
           ...acc,
           {
             ...curr,
-            items: curr.items.map(item => item.id === boardItemId ? data : item)
+            items: curr.items.map(item =>
+              item.id === boardItemId ? data : item
+            )
           }
         ];
       }, []);
@@ -64,4 +67,6 @@ export default class Model {
       });
     });
   }
+
+  updateBoardItemSequence(boardItemId, targetBoardId) {}
 }
